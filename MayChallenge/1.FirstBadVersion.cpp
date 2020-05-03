@@ -28,19 +28,19 @@ Then 4 is the first bad version.
 class Solution {
 public:
     int firstBadVersion(int n) {
-        int l =1;
-        int r = n;
-        int m=0;
-        while(l < r) {
-            m = l + (r-l)/2;
-            if(isBadVersion(m)) {
-                r = m;
+        int left =1;
+        int right = n;
+        int mid=0;
+        while(left < right) {
+            mid = left + (right-left)/2;
+            if(isBadVersion(mid)) {
+                right = mid;
             } else {
-                l = m +1;
+                left = mid +1;
             }
         }
         
-        return l;
+        return left;
     }
 };
 
